@@ -3,6 +3,7 @@
 ## What's different between this fork and Zero6992's?
 This is code that I've modified to suit running for my Discord bot, ZymBot. 
 * It responds to all messages that it is mentioned in to make it feel more intelligent.
+* No ReplyAll mode, the bots responds to both commands and mentions/pings!
 * `/send_dan_prompt` is added to jailbreak ChatGPT without needing Discord Nitro.
 
 ### Okay that's all the differences in here. The rest of the README is from the original fork.
