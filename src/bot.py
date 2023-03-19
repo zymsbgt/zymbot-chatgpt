@@ -201,9 +201,6 @@ def run_discord_bot():
             
     @client.tree.command(name="reset", description="Complete reset ChatGPT conversation history")
     async def reset(interaction: discord.Interaction):
-        await interaction.response.defer(ephemeral=False)
-        await interaction.followup.send("`Reboot signal sent`")
-        sys.exit()
         chat_model = os.getenv("CHAT_MODEL")
         if chat_model == "OFFICIAL":
             responses.chatbot.reset()
