@@ -9,15 +9,12 @@ This is code that I've modified to suit running for the ChatGPT Module of my Dis
 
 > ### Build your own Discord bot using ChatGPT
 >
-> [**中文說明**](https://zero6992.github.io/posts/chatgpt-discord-bot-chinese/)
 ---
 > **Warning**
 >
->According to OpenAI's latest announcement, using unofficial API may result in the ban of your account. Please assess the risks yourself
+> #### 2023-03-18 GPT-4 is now supported and the dependency packages have been updated. Please reinstall the dependencies once again
 >
-> #### 2023-03-14 Website ChatGPT model is unstable, suggest using the official API
-> #### 2023-03-03 Update: Official GPT-3.5 model
-> #### 2023-02-25 Update: Website ChatGPT model
+> #### 2023-03-16 OpenAI has deactivated some accounts using UNOFFICIAL model. Recommend using OFFICIAL model
 ## Features
 
 * `/chat [message]` Chat with ChatGPT!
@@ -53,7 +50,7 @@ This is code that I've modified to suit running for the ChatGPT Module of my Dis
 
 > **Warning**
 >
->Using certain personas may generate vulgar or disturbing content. Use at your own risk.
+> Using certain personas may generate vulgar or disturbing content. Use at your own risk.
 
 ![image](https://user-images.githubusercontent.com/91911303/223772334-7aece61f-ead7-4119-bcd4-7274979c4702.png)
 
@@ -173,3 +170,7 @@ This is code that I've modified to suit running for the ChatGPT Module of my Dis
         ![channel-id](https://user-images.githubusercontent.com/89479282/207697217-e03357b3-3b3d-44d0-b880-163217ed4a49.PNG)
 
    2. paste it into `.env` under `DISCORD_CHANNEL_ID`
+   
+ ---
+ [**中文說明**](https://zero6992.github.io/posts/chatgpt-discord-bot-chinese/)
+

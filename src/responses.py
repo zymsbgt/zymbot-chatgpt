@@ -11,7 +11,7 @@ OPENAI_EMAIL = os.getenv("OPENAI_EMAIL")
 OPENAI_PASSWORD = os.getenv("OPENAI_PASSWORD")
 SESSION_TOKEN = os.getenv("SESSION_TOKEN")
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-ENGINE = os.getenv("OPENAI_ENGINE")
+ENGINE = os.getenv("GPT_ENGINE")
 CHAT_MODEL = os.getenv("CHAT_MODEL")
 
 def get_chatbot_model(model_name: str) -> Union[AsyncChatbot, Chatbot]:
@@ -19,11 +19,10 @@ def get_chatbot_model(model_name: str) -> Union[AsyncChatbot, Chatbot]:
         openai_email = os.getenv("OPENAI_EMAIL")
         openai_password = os.getenv("OPENAI_PASSWORD")
         session_token = os.getenv("SESSION_TOKEN")
-        return AsyncChatbot(config={"email": openai_email, "password": openai_password, "session_token": session_token})
+        return AsyncChatbot(config={"email": openai_email, "password": openai_password, "session_token": session_token, "model": ENGINE})
     elif model_name == "OFFICIAL":
         openai_api_key = os.getenv("OPENAI_API_KEY")
-        engine = os.getenv("OPENAI_ENGINE")
-        return Chatbot(api_key=openai_api_key, engine=engine)
+        return Chatbot(api_key=openai_api_key, engine=ENGINE)
 
 chatbot = get_chatbot_model(CHAT_MODEL)
 
