@@ -1,5 +1,7 @@
 discord.py
 python-dotenv
-revChatGPT
-openai
-asgiref
+asgiref==3.6.0
+openai==0.27.5
+revChatGPT==5.0.0
+GoogleBard==1.0.0
+EdgeGPT==0.3.4.2
