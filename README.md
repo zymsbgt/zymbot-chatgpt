@@ -49,6 +49,12 @@ This is code that I've modified to suit running for the ChatGPT Module of my Dis
 
    ![image](https://user-images.githubusercontent.com/89479282/205949600-0c7ddb40-7e82-47a0-b59a-b089f929d177.png)
 ---
+> **Note**
+>
+> In Step 2, you only need to complete the authentication process for the model you want to use (it's not necessary to complete all Step 2)
+> 
+> Remember to modify `CHAT_MODEL` to the default model you want to use in `.env` file
+
 ## Step 2: Official API authentication
 
 ### Geanerate an OpenAI API key
@@ -60,30 +66,11 @@ This is code that I've modified to suit running for the ChatGPT Module of my Dis
 
 3. Store the SECRET KEY to `.env` under the `OPENAI_API_KEY`
 
-4. You're all set for [Step 3](#step-3-run-the-bot-on-the-desktop)
 ---
-## Step 2: Website ChatGPT authentication - 2 approaches
+## Step 2: Website ChatGPT authentication
 
 > **Only Support ChatGPT Plus Account**
 
-### Email/Password approache (Not supported for Google/Microsoft accounts)
-
-1. Create an account on https://chat.openai.com/chat and open it
-
-2.  Open console with `F12`
-3.  Open `Application` tab > Cookies
-
-   ![image](https://user-images.githubusercontent.com/89479282/229298001-41ab4f61-5b79-4c65-b08c-708ee6fe2304.png)
-
-4. Copy the value for `_puid` from cookies and paste it into `.env` under `PUID`
-
-5. Save your email into `.env` under `OPENAI_EMAIL`
-
-6. Save your password into `.env` under `OPENAI_PASSWORD`
-
-7. You're all set for [Step 3](#step-3-run-the-bot-on-the-desktop)
-
-### ACCESS token approache
 1. Open https://chat.openai.com/api/auth/session
 
 2. Open console with `F12`
@@ -94,10 +81,8 @@ This is code that I've modified to suit running for the ChatGPT Module of my Dis
 
 4. Copy the value for `_puid` from cookies and paste it into `.env` under `PUID`
 
-
 5. Copy the value for `accessToken` from cookies and paste it into `.env` under `ACCESS_TOKEN`
 
-6. You're all set for [Step 3](#step-3-run-the-bot-on-the-desktop)
 ---
 ## Step 2: Google Bard authentication
 1. Go to https://bard.google.com/
@@ -108,7 +93,6 @@ This is code that I've modified to suit running for the ChatGPT Module of my Dis
 
 4. Copy the value for `__Secure-1PSID` from cookies and paste it into `.env` under `BARD_SESSION_ID`
 
-5. You're all set for [Step 3](#step-3-run-the-bot-on-the-desktop)
 ---
 ## Step 2: Microsoft Bing authentication
 1. **Rename the file `cookies.dev.json` to `cookies.json`**
@@ -117,9 +101,8 @@ This is code that I've modified to suit running for the ChatGPT Module of my Dis
 
 3. Use Cookie Editor or similar extensions to export the cookies
 
-3. Paste it into `cookies.json`
+4. Paste it into `cookies.json`
 
-5. You're all set for [Step 3](#step-3-run-the-bot-on-the-desktop)
 ---
 ## Step 3: Run the bot on the desktop
 
@@ -142,9 +125,21 @@ This is code that I've modified to suit running for the ChatGPT Module of my Dis
 
 ### Have a good chat!
 ---
-## Optional: Disable logging
 
-* Set the value of `LOGGING` in the `.env` to False
+## Optional: Auto-Login
+>  * The auto-login feature allows your bot to automatically login to either Google Bard or Microsoft Bing using provided credentials
+>  * It will auto fetch the cookies you need
+
+*  To enable this feature, first specify your Chrome browser's version by filling in the `chrome_version` field in the `.env` file
+* Google Bard
+   1. set `bard_enable_auto_login` to `True` in `.env`
+   2. Fill `google_account` and `google_password` in `.env`
+  
+      (NOTICE:  AUTO-LOGIN ONLY WORKS FOR GOOGLE ACCOUNT THAT DOES NOT HAVE 2FA)
+* Microsoft Bing
+   1. set `bing_enable_auto_login` to `True` in `.env`
+   2. Then fill `bing_account` and `bing_password` in `.env`
+
 ## Optional: Setup system prompt
 
 * A system prompt would be invoked when the bot is first started or reset
@@ -159,8 +154,12 @@ This is code that I've modified to suit running for the ChatGPT Module of my Dis
 
    2. paste it into `.env` under `DISCORD_CHANNEL_ID`
 
+## Optional: Disable logging
+
+* Set the value of `LOGGING` in the `.env` to False
+
 ------
->  [**中文設置教學**](https://zero6992.github.io/2023/03/09/chatGPT-discord-bot-chinese/)
+>  [**中文設置教學**](https://zero6992.me/2023/03/08/chatGPT-discord-bot-chinese/)
 ------
 ## Commands
 
